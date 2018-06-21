@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Centro</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+	<div th:switch="${centro.id}"> 
+		<h4>Benvenuti nel centro di </h4>
+  		<h2 th:case="1"><span th:text="${centro.nome}"></span></h2>
+  		<h2 th:case="2"><span th:text="${centro.nome}"></span></h2>
+  		<h2 th:case="3"><span th:text="${centro.nome}"></span></h2>
+  		<h2 th:case="4"><span th:text="${centro.nome}"></span></h2>
+	</div>
+	<p>
+	<span><h6>Indirizzo: </h6> <p th:text="${centro.indirizzo}"></p></span>
+	<span><h6>Email: </h6> <a href=""><p th:text="${centro.email}"></p></a></span>
+	<span><h6>Telefono: </h6> <p th:text="${centro.telefono}"></p></span>
+	<p>
+	<div>
+		<a th:href="@{'/centro' + '/' + ${centro.id} + '/leattivita'}" class="button big attivita">Lista Attività Del Centro</a>
+    </div>
+    <div>
+    	<p>Responsabile Centro : <span th:text="${centro.responsabile.nome} + ' ' + ${centro.responsabile.cognome}"></span></p>
+    </div>
+    <div>
+    	<center><a th:href="@{'/'}" class="button big">Torna alla Home</a></center>
+    </div>
+</body>
+</html>

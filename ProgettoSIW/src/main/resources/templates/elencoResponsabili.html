@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Responsabili</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <div>
+    	<h2>Responsabili</h2>
+		<div>
+			<table>
+			<tr>
+			<td><b>Responsabile</b></td>
+			<td><b>Centro</b></td>
+			</tr>
+				<tr th:each = "responsabile : ${responsabili}">
+					<td th:text="${responsabile.nome} + ' ' + ${responsabile.cognome}"></td>
+					<td th:text="${responsabile.centro.nome}"></td>
+				</tr>
+            </table>
+   		</div>
+   		<div>
+    		<center><a th:href="@{'/'}" class="button big home attivita">Torna alla Home</a></center>
+    	</div>
+    </div>
+</body>
+</html>

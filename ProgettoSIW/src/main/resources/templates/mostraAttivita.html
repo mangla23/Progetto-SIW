@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Attività</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <div>
+    	<h2>Attività</h2>
+		<p>
+			Nome: <span th:text="${attivita.nome}"></span>
+   		</p>
+		<p>
+			Data: <span th:text="${attivita.data}"></span>
+   		</p>
+		<p>
+			Ora inizio: <span th:text="${attivita.orarioInizio}"></span>
+   		</p>
+   		<p>
+			Ora fine: <span th:text="${attivita.orarioFine}"></span>
+   		</p>
+   		<p>
+   			<a th:href = "@{'/centro' + '/' + ${centro.id} + '/' + ${attivita.id} + '/' + @{'allievoForm'}}" class="button">Aggiungi allievo</a>
+        </p>   		
+   		<p>
+   			<a th:href = "@{'/centro' + '/' + ${centro.id} + '/' + ${attivita.id} + '/' + @{'allieviList'}}" class="button">Elenco allievi</a>
+        </p>
+        
+        <a th:href="@{'/centro' + '/' + ${attivita.centro.id}}" class="button big home attivita">Torna al centro</a>
+    </div>
+</body>
+</html>

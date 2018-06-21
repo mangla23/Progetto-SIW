@@ -1,0 +1,19 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Allievi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <div>
+    	<h4>Elenco Allievi</h4>
+			<table>
+				<tr th:each="allievo : ${allievi}">
+					<td><a th:href="@{'/allievo' + '/' + ${allievo.id}}"><span th:text="${allievo.nome} + ' ' + ${allievo.cognome}"></span></a></td>				
+                </tr>
+            </table>
+            <a th:href="@{'/centro' + '/' + ${attivita.centro.id} + '/' + ${attivita.id} }" class="button big home attivita">Torna all'attività</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Allievo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <div>
+    	<h4>Allievo</h4>
+    		<div>
+    		</div>
+    		<h6>Nome: </h6><p th:text="${allievo.nome}"></p>
+			<h6>Cognome: </h6><p th:text="${allievo.cognome}"></p>
+   			<h6>Email: </h6><a href=""><p th:text="${allievo.email}"></p></a>
+   			<h6>Data di nascita : </h6><p th:text="${allievo.dataDiNascita}"></p>
+   			<h6>Luogo di nascita : </h6><p th:text="${allievo.luogoDiNascita}"></p>
+   			<h6>Telefono : </h6><p th:text="${allievo.telefono}"></p>
+    </div>
+</body>
+</html>
